@@ -1,0 +1,382 @@
+[
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 0,
+    "SEM PRAZO DEFINIDO": 0,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-10-01"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 0,
+    "SEM PRAZO DEFINIDO": 0,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-10-08"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 0,
+    "SEM PRAZO DEFINIDO": 0,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-10-15"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 0,
+    "SEM PRAZO DEFINIDO": 2,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-10-22"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 0,
+    "SEM PRAZO DEFINIDO": 1,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-10-29"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 6,
+    "SEM PRAZO DEFINIDO": 1,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-11-05"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 7,
+    "SEM PRAZO DEFINIDO": 0,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-11-12"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 6,
+    "SEM PRAZO DEFINIDO": 1,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-11-19"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 5,
+    "SEM PRAZO DEFINIDO": 1,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-11-26"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 10,
+    "SEM PRAZO DEFINIDO": 1,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-12-03"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 8,
+    "SEM PRAZO DEFINIDO": 1,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-12-10"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 8,
+    "SEM PRAZO DEFINIDO": 2,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-12-17"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 9,
+    "SEM PRAZO DEFINIDO": 2,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-12-24"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 18,
+    "SEM PRAZO DEFINIDO": 2,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2025-12-31"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 18,
+    "SEM PRAZO DEFINIDO": 2,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-01-07"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 17,
+    "SEM PRAZO DEFINIDO": 2,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-01-14"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 17,
+    "SEM PRAZO DEFINIDO": 2,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-01-21"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 18,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-01-28"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 17,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-02-04"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 17,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-02-11"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 17,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-02-18"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 16,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-02-25"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 13,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-03-04"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 13,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-03-11"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 13,
+    "SEM PRAZO DEFINIDO": 5,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-03-18"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 13,
+    "SEM PRAZO DEFINIDO": 69,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-03-25"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 18,
+    "SEM PRAZO DEFINIDO": 227,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-04-01"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 18,
+    "SEM PRAZO DEFINIDO": 192,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-04-08"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 16,
+    "SEM PRAZO DEFINIDO": 123,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-04-15"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 16,
+    "SEM PRAZO DEFINIDO": 117,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-04-22"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 16,
+    "SEM PRAZO DEFINIDO": 145,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-04-29"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 40,
+    "SEM PRAZO DEFINIDO": 143,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-05-06"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 38,
+    "SEM PRAZO DEFINIDO": 162,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-05-13"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 33,
+    "SEM PRAZO DEFINIDO": 120,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-05-20"
+  },
+  {
+    "total": null,
+    "CONCLUÍDO": null,
+    "EM PROGRESSO": null,
+    "EM ATRASO": 27,
+    "SEM PRAZO DEFINIDO": 106,
+    "CANCELADO": null,
+    "PAUSADO": null,
+    "date": "2026-05-27"
+  },
+  {
+    "date": "2026-06-01",
+    "total": 546,
+    "CONCLUÍDO": 186,
+    "EM PROGRESSO": 116,
+    "EM ATRASO": 68,
+    "SEM PRAZO DEFINIDO": 101,
+    "CANCELADO": 50,
+    "PAUSADO": 20
+  },
+  {
+    "date": "2026-06-02",
+    "total": 546,
+    "CONCLUÍDO": 188,
+    "EM PROGRESSO": 116,
+    "EM ATRASO": 66,
+    "SEM PRAZO DEFINIDO": 102,
+    "CANCELADO": 50,
+    "PAUSADO": 20
+  },
+  {
+    "date": "2026-06-03",
+    "total": 546,
+    "CONCLUÍDO": 189,
+    "EM PROGRESSO": 116,
+    "EM ATRASO": 64,
+    "SEM PRAZO DEFINIDO": 102,
+    "CANCELADO": 51,
+    "PAUSADO": 20
+  }
+]

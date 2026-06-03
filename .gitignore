@@ -1,0 +1,11 @@
+# Arquivos temporários
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Scripts de migração (uso único)
+migrar_historico.py
+
+# Dashboards datados (mantemos apenas o LATEST no repositório)
+ProjetoNext_Dashboard_2*.html
