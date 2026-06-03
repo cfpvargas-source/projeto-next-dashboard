@@ -12,7 +12,7 @@ from collections import defaultdict
 
 # â”€â”€ Credenciais â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # LÃª do ambiente (GitHub Actions Secret) ou usa o valor local como fallback
-CLICKUP_TOKEN = os.environ.get('CLICKUP_TOKEN', 'COLOQUE_NOVO_TOKEN_AQUI')
+CLICKUP_TOKEN = os.environ.get('CLICKUP_TOKEN', 'pk_106059012_MUHDCKFLMAKNYZ8KVO8SLBG523SGXJOT')
 LIST_ID       = '901321384887'
 
 # â”€â”€ Caminhos â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -555,4 +555,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
