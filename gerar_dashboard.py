@@ -1,5 +1,5 @@
-"""
-Gerar Dashboard — Projeto Next
+﻿"""
+Gerar Dashboard â€” Projeto Next
 Busca tarefas do ClickUp, processa e gera HTML interativo.
 """
 
@@ -10,12 +10,12 @@ import requests
 from datetime import datetime, date, timedelta
 from collections import defaultdict
 
-# ── Credenciais ──────────────────────────────────────────────────────────────
-# Lê do ambiente (GitHub Actions Secret) ou usa o valor local como fallback
-CLICKUP_TOKEN = os.environ.get('CLICKUP_TOKEN', 'pk_106059012_QLRKVG2H9W4FW459I0LE0Q1S6DR8ZDF4')
+# â”€â”€ Credenciais â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# LÃª do ambiente (GitHub Actions Secret) ou usa o valor local como fallback
+CLICKUP_TOKEN = os.environ.get('CLICKUP_TOKEN', 'COLOQUE_NOVO_TOKEN_AQUI')
 LIST_ID       = '901321384887'
 
-# ── Caminhos ─────────────────────────────────────────────────────────────────
+# â”€â”€ Caminhos â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 BASE_DIR      = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'dashboard_template.html')
 HIST_PATH     = os.path.join(BASE_DIR, 'historico_snapshots.json')
@@ -26,23 +26,23 @@ TODAY     = date.today()
 TODAY_STR = TODAY.strftime('%Y-%m-%d')
 DATE_FMT  = TODAY.strftime('%d/%m/%Y')
 
-# ── Seeds iniciais ────────────────────────────────────────────────────────────
+# â”€â”€ Seeds iniciais â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 SEEDS = [
-    {'date':'2026-06-01','total':546,'CONCLUÍDO':186,'EM PROGRESSO':116,'EM ATRASO':68,'SEM PRAZO DEFINIDO':101,'CANCELADO':50,'PAUSADO':20},
-    {'date':'2026-06-02','total':546,'CONCLUÍDO':188,'EM PROGRESSO':116,'EM ATRASO':66,'SEM PRAZO DEFINIDO':102,'CANCELADO':50,'PAUSADO':20},
+    {'date':'2026-06-01','total':546,'CONCLUÃDO':186,'EM PROGRESSO':116,'EM ATRASO':68,'SEM PRAZO DEFINIDO':101,'CANCELADO':50,'PAUSADO':20},
+    {'date':'2026-06-02','total':546,'CONCLUÃDO':188,'EM PROGRESSO':116,'EM ATRASO':66,'SEM PRAZO DEFINIDO':102,'CANCELADO':50,'PAUSADO':20},
 ]
 
-# ── Status mapping ────────────────────────────────────────────────────────────
+# â”€â”€ Status mapping â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 STATUS_MAP = {
-    # valores que o ClickUp pode retornar → status normalizado
-    'complete':            'CONCLUÍDO',
-    'concluído':           'CONCLUÍDO',
-    'concluido':           'CONCLUÍDO',
-    'done':                'CONCLUÍDO',
+    # valores que o ClickUp pode retornar â†’ status normalizado
+    'complete':            'CONCLUÃDO',
+    'concluÃ­do':           'CONCLUÃDO',
+    'concluido':           'CONCLUÃDO',
+    'done':                'CONCLUÃDO',
     'in progress':         'EM PROGRESSO',
     'em progresso':        'EM PROGRESSO',
     'in review':           'EM PROGRESSO',
-    'revisão':             'EM PROGRESSO',
+    'revisÃ£o':             'EM PROGRESSO',
     'overdue':             'EM ATRASO',
     'em atraso':           'EM ATRASO',
     'atraso':              'EM ATRASO',
@@ -55,20 +55,20 @@ STATUS_MAP = {
     'on hold':             'PAUSADO',
     'pausado':             'PAUSADO',
     'paused':              'PAUSADO',
-    'not started':         'NÃO INICIADO',
-    'não iniciado':        'NÃO INICIADO',
-    'nao iniciado':        'NÃO INICIADO',
-    'open':                'NÃO INICIADO',
-    'to do':               'NÃO INICIADO',
+    'not started':         'NÃƒO INICIADO',
+    'nÃ£o iniciado':        'NÃƒO INICIADO',
+    'nao iniciado':        'NÃƒO INICIADO',
+    'open':                'NÃƒO INICIADO',
+    'to do':               'NÃƒO INICIADO',
 }
 
-ACTIVE_STATUSES = {'EM PROGRESSO', 'EM ATRASO', 'SEM PRAZO DEFINIDO', 'NÃO INICIADO'}
+ACTIVE_STATUSES = {'EM PROGRESSO', 'EM ATRASO', 'SEM PRAZO DEFINIDO', 'NÃƒO INICIADO'}
 
-# ── Processos válidos e normalização ─────────────────────────────────────────
+# â”€â”€ Processos vÃ¡lidos e normalizaÃ§Ã£o â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 VALID_PROCS = {
-    'Novos Negócios',
-    'Incorporação Make It',
-    'Incorporação Gadens',
+    'Novos NegÃ³cios',
+    'IncorporaÃ§Ã£o Make It',
+    'IncorporaÃ§Ã£o Gadens',
     'Engenharia e GMO',
     'Suprimentos',
     'Financeiro',
@@ -83,12 +83,12 @@ def norm_proc(p: str) -> str:
     return p
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # 1. Busca API ClickUp
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def fetch_all_tasks() -> list[dict]:
-    """Busca todas as tarefas da lista via API ClickUp (paginação 100/página)."""
+    """Busca todas as tarefas da lista via API ClickUp (paginaÃ§Ã£o 100/pÃ¡gina)."""
     headers = {'Authorization': CLICKUP_TOKEN}
     url     = f'https://api.clickup.com/api/v2/list/{LIST_ID}/task'
     tasks   = []
@@ -107,7 +107,7 @@ def fetch_all_tasks() -> list[dict]:
         data  = resp.json()
         batch = data.get('tasks', [])
         tasks.extend(batch)
-        print(f'  Página {page}: {len(batch)} tarefas (total até agora: {len(tasks)})')
+        print(f'  PÃ¡gina {page}: {len(batch)} tarefas (total atÃ© agora: {len(tasks)})')
         if len(batch) < 100:
             break
         page += 1
@@ -116,9 +116,9 @@ def fetch_all_tasks() -> list[dict]:
     return tasks
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# 2. Normalização de tarefas
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# 2. NormalizaÃ§Ã£o de tarefas
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def _get_custom_field(task: dict, field_name: str) -> str:
     for cf in task.get('custom_fields', []):
@@ -152,16 +152,16 @@ def _resolve_status(task: dict) -> str:
     mapped = STATUS_MAP.get(raw, '')
 
     if not mapped:
-        # tenta fallback: se o nome contém palavras-chave
+        # tenta fallback: se o nome contÃ©m palavras-chave
         for key, val in STATUS_MAP.items():
             if key in raw:
                 mapped = val
                 break
         if not mapped:
-            mapped = 'NÃO INICIADO'
+            mapped = 'NÃƒO INICIADO'
 
-    # Regra de atraso: se ainda ativo e due_date < hoje → EM ATRASO
-    if mapped in ('EM PROGRESSO', 'NÃO INICIADO'):
+    # Regra de atraso: se ainda ativo e due_date < hoje â†’ EM ATRASO
+    if mapped in ('EM PROGRESSO', 'NÃƒO INICIADO'):
         due_ms = task.get('due_date')
         if due_ms:
             due = _ms_to_date(due_ms)
@@ -169,7 +169,7 @@ def _resolve_status(task: dict) -> str:
                 return 'EM ATRASO'
 
     # Regra sem prazo: se ativo e sem due_date
-    if mapped in ('EM PROGRESSO', 'NÃO INICIADO'):
+    if mapped in ('EM PROGRESSO', 'NÃƒO INICIADO'):
         due_ms = task.get('due_date')
         if not due_ms:
             return 'SEM PRAZO DEFINIDO'
@@ -189,12 +189,12 @@ def normalize_tasks(raw_tasks: list[dict]) -> list[dict]:
         if priority not in ('urgent', 'high', 'normal', 'low'):
             priority = 'normal'
 
-        area = _get_custom_field(t, 'Área/Departamento')
+        area = _get_custom_field(t, 'Ãrea/Departamento')
         proc = norm_proc(_get_custom_field(t, 'Processo'))
 
-        # date_done: timestamp de quando foi marcado como concluído
+        # date_done: timestamp de quando foi marcado como concluÃ­do
         date_done = None
-        if status == 'CONCLUÍDO':
+        if status == 'CONCLUÃDO':
             date_done = _ms_to_date(t.get('date_closed') or t.get('date_updated'))
 
         due_date = _ms_to_date(t.get('due_date'))
@@ -215,15 +215,15 @@ def normalize_tasks(raw_tasks: list[dict]) -> list[dict]:
     return tasks
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# 3. Histórico de snapshots
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# 3. HistÃ³rico de snapshots
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def load_history() -> list[dict]:
     if os.path.exists(HIST_PATH):
         with open(HIST_PATH, 'r', encoding='utf-8') as f:
             return json.load(f)
-    return list(SEEDS)  # cópia dos seeds
+    return list(SEEDS)  # cÃ³pia dos seeds
 
 
 def save_history(history: list[dict]) -> None:
@@ -235,7 +235,7 @@ def build_snapshot(tasks: list[dict]) -> dict:
     snap = {
         'date':               TODAY_STR,
         'total':              len(tasks),
-        'CONCLUÍDO':          0,
+        'CONCLUÃDO':          0,
         'EM PROGRESSO':       0,
         'EM ATRASO':          0,
         'SEM PRAZO DEFINIDO': 0,
@@ -250,36 +250,36 @@ def build_snapshot(tasks: list[dict]) -> dict:
 
 
 def upsert_snapshot(history: list[dict], snap: dict) -> list[dict]:
-    """Insere ou atualiza o snapshot do dia, mantendo histórico ordenado."""
+    """Insere ou atualiza o snapshot do dia, mantendo histÃ³rico ordenado."""
     history = [h for h in history if h['date'] != TODAY_STR]
     history.append(snap)
     history.sort(key=lambda x: x['date'])
     return history
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# 4. Curvas de evolução
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# 4. Curvas de evoluÃ§Ã£o
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def build_done_global(tasks: list[dict]) -> list[list]:
     """
-    [[date, cum_count], ...] — concluídas acumuladas globais.
+    [[date, cum_count], ...] â€” concluÃ­das acumuladas globais.
     Calculado a partir do date_done real das tarefas, agrupado por semana ISO.
     """
     from collections import defaultdict
-    by_week: dict[tuple, str] = {}       # week_key → última data da semana com conclusões
+    by_week: dict[tuple, str] = {}       # week_key â†’ Ãºltima data da semana com conclusÃµes
     week_counts: dict[tuple, int] = defaultdict(int)
 
     for t in tasks:
-        if t['status'] == 'CONCLUÍDO' and t['date_done']:
+        if t['status'] == 'CONCLUÃDO' and t['date_done']:
             d = date.fromisoformat(t['date_done'])
             wk = (d.isocalendar()[0], d.isocalendar()[1])
             week_counts[wk] += 1
-            # guarda a data mais recente da semana como rótulo
+            # guarda a data mais recente da semana como rÃ³tulo
             if wk not in by_week or t['date_done'] > by_week[wk]:
                 by_week[wk] = t['date_done']
 
-    # Acumula em ordem cronológica
+    # Acumula em ordem cronolÃ³gica
     sorted_weeks = sorted(week_counts.keys())
     cum = 0
     series = []
@@ -291,14 +291,14 @@ def build_done_global(tasks: list[dict]) -> list[list]:
 
 def _weekly_snapshots(history: list[dict], field: str) -> list[list]:
     """
-    Retorna um ponto por semana ISO (último snapshot da semana).
+    Retorna um ponto por semana ISO (Ãºltimo snapshot da semana).
     Sempre inclui o snapshot mais recente, independente do dia da semana.
     """
     by_week: dict[tuple, dict] = {}
     for h in history:
         d = date.fromisoformat(h['date'])
         week_key = (d.isocalendar()[0], d.isocalendar()[1])  # (ano, semana)
-        # mantém o snapshot mais recente de cada semana
+        # mantÃ©m o snapshot mais recente de cada semana
         if week_key not in by_week or h['date'] > by_week[week_key]['date']:
             by_week[week_key] = h
 
@@ -306,23 +306,23 @@ def _weekly_snapshots(history: list[dict], field: str) -> list[list]:
 
 
 def build_sp_global(history: list[dict]) -> list[list]:
-    """[[date, count], ...] — sem prazo definido, granularidade semanal."""
+    """[[date, count], ...] â€” sem prazo definido, granularidade semanal."""
     return _weekly_snapshots(history, 'SEM PRAZO DEFINIDO')
 
 
 def build_atr_global(history: list[dict]) -> list[list]:
-    """[[date, count], ...] — em atraso, granularidade semanal."""
+    """[[date, count], ...] â€” em atraso, granularidade semanal."""
     return _weekly_snapshots(history, 'EM ATRASO')
 
 
 def build_done_by_proc(tasks: list[dict]) -> dict:
     """
     {processo: [[date, cum_count], ...]}
-    Acumulado de concluídas por processo, baseado em date_done das tarefas.
+    Acumulado de concluÃ­das por processo, baseado em date_done das tarefas.
     """
     by_proc: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
     for t in tasks:
-        if t['status'] == 'CONCLUÍDO' and t['date_done'] and t['proc']:
+        if t['status'] == 'CONCLUÃDO' and t['date_done'] and t['proc']:
             by_proc[t['proc']][t['date_done']] += 1
 
     result = {}
@@ -340,11 +340,11 @@ def build_done_by_proc(tasks: list[dict]) -> dict:
 def build_done_by_area(tasks: list[dict]) -> dict:
     """
     {area: [[date, cum_count], ...]}
-    Acumulado de concluídas por área, baseado em date_done das tarefas.
+    Acumulado de concluÃ­das por Ã¡rea, baseado em date_done das tarefas.
     """
     by_area: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
     for t in tasks:
-        if t['status'] == 'CONCLUÍDO' and t['date_done'] and t['area']:
+        if t['status'] == 'CONCLUÃDO' and t['date_done'] and t['area']:
             by_area[t['area']][t['date_done']] += 1
 
     result = {}
@@ -359,9 +359,9 @@ def build_done_by_area(tasks: list[dict]) -> dict:
     return result
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # 5. Heatmap
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def build_heatmap(tasks: list[dict]) -> dict:
     """
@@ -372,15 +372,15 @@ def build_heatmap(tasks: list[dict]) -> dict:
       'max_val':  int,
       'max_sp':   int,
     }
-    Inclui linha TOTAL no rodapé.
-    Statuses: EM PROGRESSO + NÃO INICIADO. SEM PRAZO DEFINIDO vai na coluna Sem Prazo.
+    Inclui linha TOTAL no rodapÃ©.
+    Statuses: EM PROGRESSO + NÃƒO INICIADO. SEM PRAZO DEFINIDO vai na coluna Sem Prazo.
     """
-    ACTIVE = {'EM PROGRESSO', 'NÃO INICIADO', 'SEM PRAZO DEFINIDO'}
+    ACTIVE = {'EM PROGRESSO', 'NÃƒO INICIADO', 'SEM PRAZO DEFINIDO'}
 
     MONTH_PT = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']
 
     def fmt_month(ym: str) -> str:
-        """'2026-06' → 'jun/26'"""
+        """'2026-06' â†’ 'jun/26'"""
         y, m = ym.split('-')
         return f'{MONTH_PT[int(m)-1]}/{y[2:]}'
 
@@ -392,7 +392,7 @@ def build_heatmap(tasks: list[dict]) -> dict:
     for t in tasks:
         if t['status'] not in ACTIVE:
             continue
-        area = t['area'] or 'Sem Área'
+        area = t['area'] or 'Sem Ãrea'
         if t['status'] == 'SEM PRAZO DEFINIDO' or not t['due_date']:
             area_sp[area] += 1
         else:
@@ -400,7 +400,7 @@ def build_heatmap(tasks: list[dict]) -> dict:
             area_month[area][month] += 1
             months_seen.add(month)
 
-    # Sequência contínua de meses (do menor ao maior encontrado)
+    # SequÃªncia contÃ­nua de meses (do menor ao maior encontrado)
     if months_seen:
         first_m = min(months_seen)
         last_m  = max(months_seen)
@@ -415,7 +415,7 @@ def build_heatmap(tasks: list[dict]) -> dict:
 
     periods = [fmt_month(m) for m in months]
 
-    # Todas as áreas, ordenadas por volume total decrescente
+    # Todas as Ã¡reas, ordenadas por volume total decrescente
     all_areas = sorted(
         set(area_month.keys()) | set(area_sp.keys()),
         key=lambda a: -(sum(area_month[a].values()) + area_sp[a])
@@ -446,9 +446,9 @@ def build_heatmap(tasks: list[dict]) -> dict:
     }
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # 6. Logo base64
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def load_logo_b64() -> str:
     if os.path.exists(LOGO_PATH):
@@ -457,9 +457,9 @@ def load_logo_b64() -> str:
     return ''
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# 7. Geração do HTML
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# 7. GeraÃ§Ã£o do HTML
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def generate_html(
     tasks:        list[dict],
@@ -498,9 +498,9 @@ def generate_html(
     return html
 
 
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # Main
-# ─────────────────────────────────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 def main():
     # 1. Buscar tarefas
@@ -510,9 +510,9 @@ def main():
     tasks = normalize_tasks(raw_tasks)
     print(f'Tarefas normalizadas: {len(tasks)}')
 
-    # 3. Carregar / criar histórico
+    # 3. Carregar / criar histÃ³rico
     history = load_history()
-    print(f'Histórico carregado: {len(history)} snapshots')
+    print(f'HistÃ³rico carregado: {len(history)} snapshots')
 
     # 4. Adicionar snapshot do dia
     snap    = build_snapshot(tasks)
@@ -525,7 +525,7 @@ def main():
     sp_global   = build_sp_global(history)
     atr_global  = build_atr_global(history)
 
-    # 6. Curvas por processo e área (do date_done das tarefas)
+    # 6. Curvas por processo e Ã¡rea (do date_done das tarefas)
     done_by_proc = build_done_by_proc(tasks)
     done_by_area = build_done_by_area(tasks)
 
@@ -555,3 +555,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
