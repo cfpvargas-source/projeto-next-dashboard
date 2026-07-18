@@ -818,5 +818,15 @@
     "SEM PRAZO DEFINIDO": 75,
     "CANCELADO": 67,
     "PAUSADO": 37
+  },
+  {
+    "date": "2026-07-18",
+    "total": 700,
+    "CONCLUÍDO": 256,
+    "EM PROGRESSO": 203,
+    "EM ATRASO": 60,
+    "SEM PRAZO DEFINIDO": 75,
+    "CANCELADO": 67,
+    "PAUSADO": 37
   }
 ]
