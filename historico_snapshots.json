@@ -1188,5 +1188,15 @@
     "SEM PRAZO DEFINIDO": 26,
     "CANCELADO": 95,
     "PAUSADO": 33
+  },
+  {
+    "date": "2026-08-25",
+    "total": 713,
+    "CONCLUÍDO": 373,
+    "EM PROGRESSO": 121,
+    "EM ATRASO": 66,
+    "SEM PRAZO DEFINIDO": 24,
+    "CANCELADO": 95,
+    "PAUSADO": 33
   }
 ]
