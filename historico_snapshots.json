@@ -2008,5 +2008,15 @@
     "SEM PRAZO DEFINIDO": 126,
     "CANCELADO": 80,
     "PAUSADO": 34
+  },
+  {
+    "date": "2026-11-17",
+    "total": 997,
+    "CONCLUÍDO": 508,
+    "EM PROGRESSO": 130,
+    "EM ATRASO": 99,
+    "SEM PRAZO DEFINIDO": 142,
+    "CANCELADO": 82,
+    "PAUSADO": 34
   }
 ]
