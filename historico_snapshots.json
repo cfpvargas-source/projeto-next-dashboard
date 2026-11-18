@@ -2018,5 +2018,15 @@
     "SEM PRAZO DEFINIDO": 142,
     "CANCELADO": 82,
     "PAUSADO": 34
+  },
+  {
+    "date": "2026-11-18",
+    "total": 996,
+    "CONCLUÍDO": 510,
+    "EM PROGRESSO": 137,
+    "EM ATRASO": 99,
+    "SEM PRAZO DEFINIDO": 132,
+    "CANCELADO": 82,
+    "PAUSADO": 34
   }
 ]
